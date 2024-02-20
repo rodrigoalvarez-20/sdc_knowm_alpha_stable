@@ -9,7 +9,7 @@ La lista de dependencias para poder ejecutar todo el codigo es la siguiente:
 * JDK +8 (version 8 recomendada)
 * Python 3.8 en adelante
 * Waveforms SDK
-* [Memristor Discovery Modificado]()
+* [Memristor Discovery Modificado](https://github.com/rodrigoalvarez-20/memristor-discovery)
 * Visual Studio Code
 
 ### Clonacion de codigo
