@@ -1,0 +1,3 @@
+*.csv
+exported_data/
+__pycache__/
