@@ -1,0 +1,3 @@
+[submodule "Stochastic_GMMS_memristor_model"]
+	path = Stochastic_GMMS_memristor_model
+	url = https://github.com/galaguna/Stochastic_GMMS_memristor_model.git
