@@ -1,0 +1,18 @@
+1. Articulo: https://pdf.sciencedirectassets.com/271975/1-s2.0-S0167931723X00100/1-s2.0-S0167931723001375/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHwaCXVzLWVhc3QtMSJHMEUCIEbpgTu%2FbGlu%2FdXxRokmmJuSpp8q1l26JIGkvOPWj6%2FRAiEAhKtJln1%2FWmtBSe4Ajcx6r9lHV96orOEjDuOZ1h%2FW73EqvAUIxP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDOUsweHp3Mr2p3H1EyqQBVCvl%2B%2BooMx6atsJ3rK2eVmLJxMqDO3vS0J0YYkwFJT8uDaR2g8n%2BDTnSqXnFD6E6KbbOLZYKN9LLct3J165YsU3S01nUfHbbAmDvqhcNttvPJTZ0bpkV03I7ficPhV6JiXLFZEysCym9T9fh9XOnpU1hVh%2BIgiOEDDQhF2r8WM89QjuL6XeGI%2BPnxaU35h2F0pBbBqLrlQRo8eUl2mVeo0Rk07T9etxw5CmXppAyPlPUYHCx0OnSYcBQcIxf03TvL2tIuLggdzSrkaD5WKlSSHTI7W9y7O%2BhKfUSIZB0%2B%2B%2F687YkRVfe2di2%2FrsiCvehGByg0YYl5twGgnzbccQmk0KxEC0SkLrXpuqX4LMBg3CAvxXh1IsKtsn016dE7%2FRV%2F8YuSzxgiMXfE8h%2Boe9KatCK8P1p5uBZvtiar6mmkCWSmTnJN7%2FmwOa6BmKj7%2BALBiFs5MvJR3Pppft8xd4mW0HqajBRK77AEB0kKhzH%2BXqJw50ijgwwib%2F1rDecRagBpxPEodHErx1ynhdsUhkHs5Rwl%2BfpiU5q6vMjuH7TMDxp3WrPbP9nTZ1ftvhy5U19lbA5rZvGbmnRHD%2FOXQOzjooduPZQw4Hib%2FjVquaN%2FRZoTDoV%2F90ldt00RsoiCyluM9AQfHEQdi9caJ2kR8elGjitdEWZ1MZQkilyX1lDRHk1fOVCYw0HEwfaq%2FI4bPQvRoc3yhbgYXXVqjdICrmdWV%2B%2BWhgv8mU1cHjLIkT%2B4GM%2FY1FvxpEfP7ncRYNaWT0sYRIr7uXqdcBurCnFeDEIrugoOPzEJFAQOutfr7oiZc3pIGrDfI6eztbXy5gpE5cnVre%2FgmLxaJD7JyXwfgjlVtyi19b%2FLXKygE8VSrllpTJMMT2r7EGOrEBtVg3ITNNaHGbF6c%2FgqxxfB89Ul5aMvQaLmvyX5VEByxaoFDXH7yXkd3tXHRgMbteJ7ZYn%2FZOsCkDIjbKiHJVWAm%2F0cGFNS%2FIHq0nQQv0q6Jbp75eUnwtSIHOFNh95wb5AU7UxaXYOVmLLl%2BPghxG8wNnIKy4VRbBoCrXJod1dM2ht9mLT65pZg6EKEdrAmN3ekHZNgMSUbU4dwq%2FButiTWxpeEJqrYc0F9s6timH%2FLE%2B&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240426T201651Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY4UX35NVC%2F20240426%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d72ef808b21217eeb031e72174e7ae0b62c15e2cb39f3a5623b8f15e8f2d6baf&hash=a9e0743ea330e98f2e623c79e8b6619fa1d2457618dbc966b70b2a9dc640e5d0&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0167931723001375&tid=spdf-fe33af5d-abd4-445a-b4a8-969290d1e5ec&sid=d1f938c611f3b5433468b200f73f5bd55654gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=031f5d590f575451&rr=87a940c27cd321b8&cc=mx
+
+2. Instalacion de XSCHEM y dependencias: 
+XSCHEM: https://web02.gonzaga.edu/faculty/talarico/vlsi/xschemInstall.html
+XSCHEM: https://xschem.sourceforge.io/stefan/xschem_man/install_xschem.html
+PDK: https://web02.gonzaga.edu/faculty/talarico/vlsi/openpdk.html
+
+3. Github Alex: https://github.com/AlejandroJuarezLora/SNN_IPN/tree/main
+Ocupar memristor_models -> Wellposed -> rram_v0.*
+Se debe de modificar el archivo rram_v0.spice para apuntar a la ruta correcta
+Recompilar el archivo Verilog A *.va
+Consultar el archivo install.sh para copiar los comandos de MKDIR y CP, ocuparlos pero apuntar a las carpetas correctas de XSCHEM --> Skywater PDK
+
+4. Checar la carpeta de Programming Memres en este repo para ocupar el proyecto de XSCHEM
+
+5. Variar las resistencias, probar con un arreglo de varias de ellas
+
+6. ¿Que pasa si conectamos la GATE del NMOS a una fuente de 1V? ¿Y a una de 5V?
