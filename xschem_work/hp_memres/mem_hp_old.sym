@@ -1,0 +1,25 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=reram
+format="@name @pinlist @symname"
+template="name=hp1
+model=mem_hp
+"}
+V {}
+S {}
+E {}
+L 4 -40 -40 -0 -40 {}
+L 4 -40 -40 -40 40 {}
+L 4 0 -40 0 40 {}
+L 4 -40 40 -0 40 {}
+L 7 -20 40 -20 60 {}
+L 7 -20 -60 -20 -40 {}
+B 4 -40 -40 -0 -20 {}
+B 4 -40 30 -0 40 {}
+B 5 -22.5 57.5 -17.5 62.5 {name=n dir=inout}
+B 5 -22.5 -62.5 -17.5 -57.5 {name=p dir=inout}
+T {@symname} -144 24 0 0 0.3 0.3 {}
+T {@name} -85 -52 0 0 0.2 0.2 {}
+T {n} -5 56 0 1 0.2 0.2 {}
+T {p} -5 -64 0 1 0.2 0.2 {}

@@ -1,0 +1,12 @@
+*MADE BY Rodrigo Alvarez
+
+.subckt mem_hp p n
+N1 p n mem_hp_model
+.ends mem_hp
+
+.model mem_hp_model mem_hp
+
+
+.control
+pre_osdi /home/ralvarez22/Documents/microse/hp_memres/mem_hp.osdi
+.endc

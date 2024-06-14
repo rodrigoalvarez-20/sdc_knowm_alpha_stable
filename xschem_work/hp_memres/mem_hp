@@ -1,0 +1,51 @@
+// MEMRISTOR HP MODEL (Linear Ion Drift model)
+// Gerardo González Cordero gerardoglez@correo.ugr.es
+// Candidate PhD in Information and Communications Technology: Nanoelectronics
+// Universidad de Granada
+// file				: mem_hp.va
+// creation date	: 22.08.2015
+// update    		: 08.11.2017 code comments
+// Ref. Strukov, Dmitri B., et al. “The Missing Memristor Found.” Nature, vol. 453, no. 7191, 2008, pp. 80–83, doi:10.1038/nature06932.
+`include "disciplines.vams"
+`include "constants.h"
+module mem_hp(p, n);
+    //,w,flux,charge
+    inout p, n; //,w,flux,charge;
+    electrical p, n, w;
+    //,w,flux,charge;
+    ///////////// Parameter ///////////////
+    parameter real Roff = 200000 from [0:inf);		//off resistance (HRS)
+    parameter real Ron = 100 from [0:inf);			//on resistance (LRS)
+    parameter real D = 3n from [1n:100n);			//thickness of the oxide layer
+    parameter real uv = 1e-15 from [0:1];			//ions movitily
+	parameter real x0=0.5 from [0:1];       		//initial state
+    
+    real flux, charge;
+    
+    //////////////////// Functions ////////////////////////
+    analog function real limit;        // 
+        real x;
+	    input x;
+	    real max_clip;
+	    input max_clip;
+	    begin
+	    	limit=x;
+	    	if(x>max_clip) begin
+               limit=max_clip;
+	    	end
+	    	if(x<0) begin
+	    		limit=0;
+	    	end
+	    end
+    endfunction
+    //////////////////// MAIN ////////////////////////
+      analog begin                                                 
+    /////////////HP MODEL (Linear Ion Drift model)//////////////
+           flux = idt(V(p,n));
+           charge = idt(I(p,n),x0*D**2/(uv*Ron)); 
+           V(w) <+ limit((uv*Ron/D)*charge,D);
+           I(p,n) 	<+ V(p,n)/(Ron*V(w)/D+Roff*(1-V(w)/D));
+    end   // end analog Linear Ion Drift model
+endmodule
+
+

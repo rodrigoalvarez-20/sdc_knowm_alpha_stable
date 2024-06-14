@@ -1,0 +1,35 @@
+`include "disciplines.vams"
+`include "constants.h"
+module mem_hp(p, n);
+    inout p, n;
+    electrical p, n;
+    parameter real R_off = 10000 from [0:inf);		//off resistance (HRS)
+    parameter real R_on = 100 from [0:inf);			//on resistance (LRS)
+    parameter real D = 10e-9 from [1n:100n);			//thickness of the oxide layer
+    parameter real mu_v = 1e-14 from (-inf:1];			//ions movitily
+	parameter real w0=0.2 from (0:1);       		//initial state
+    parameter real pexp = 1 from [1:inf);
+    
+    real coef, factor, x, R, i, v;
+
+    analog begin                                                 
+        @(initial_step) begin
+            x = w0;
+        end
+
+        coef = R_on / D**2;
+        factor = 2 * pexp;
+        
+        v = V(p, n);
+        i = I(p, n);
+
+        R = R_on * x + R_off * (1 - x);
+
+        x = w0 + idt(mu_v * coef * i * (1 - (2*x - 1)**factor));
+
+        V(p,n) <+ i * R;
+        
+    end
+endmodule
+
+
